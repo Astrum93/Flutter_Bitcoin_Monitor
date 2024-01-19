@@ -1,7 +1,8 @@
 import 'dart:convert';
 
 import 'package:fast_app_base/common/cli_common.dart';
-import 'package:fast_app_base/common/widget/scaffold/animated_number_text.dart';
+import 'package:fast_app_base/common/widget/animated_number_text.dart';
+import 'package:fast_app_base/common/widget/line_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:web_socket_channel/io.dart';
 
@@ -51,13 +52,22 @@ class MainScreenState extends State<MainScreen> {
       drawer: const MenuDrawer(),
       body: SafeArea(
         child: Center(
-          child: AnimatedNumberText(
-            priceString,
-            textStyle: const TextStyle(
-              fontSize: 50,
-              fontWeight: FontWeight.bold,
-            ),
-            duration: 50.ms,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              AnimatedNumberText(
+                priceString,
+                textStyle: const TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                ),
+                duration: 50.ms,
+              ),
+              LineChartWidget(
+                priceList,
+                maxPrice: 0,
+              )
+            ],
           ),
         ),
       ),
