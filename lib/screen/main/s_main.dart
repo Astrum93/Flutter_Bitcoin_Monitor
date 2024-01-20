@@ -57,16 +57,10 @@ class MainScreenState extends State<MainScreen> {
             children: [
               AnimatedNumberText(
                 priceString,
-                textStyle: const TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.bold,
-                ),
+                textStyle:
+                    const TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                 duration: 50.ms,
               ),
-              LineChartWidget(
-                priceList,
-                maxPrice: 0,
-              )
             ],
           ),
         ),
