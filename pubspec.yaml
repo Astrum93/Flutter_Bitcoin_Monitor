@@ -44,8 +44,8 @@ dependencies:
 
   #data
   shared_preferences: ^2.0.15
-  isar: 3.1.0
-  isar_flutter_libs: 3.1.0
+  isar: ^3.1.0+1
+  isar_flutter_libs: ^3.1.0+1
 
   #architecture
   event_bus: ^2.0.0
@@ -53,7 +53,7 @@ dependencies:
 
   #ui - resource
   eva_icons_flutter: ^3.1.0
-  google_fonts: ^4.0.4
+  google_fonts: ^6.1.0
   easy_localization: ^3.0.2
   flutter_cache_manager: ^3.3.0
 
@@ -65,7 +65,7 @@ dependencies:
   cached_network_image: ^3.2.3
 
   #ui - util
-  keyboard_utils_fork: ^0.0.4
+  keyboard_utils_fork: ^1.0.1
 
   #network
   dio: ^5.0.0
@@ -74,7 +74,7 @@ dependencies:
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.0
   web_socket_channel: ^2.4.0
-  fl_chart: ^0.65.0
+  fl_chart: ^0.66.0
 
 dev_dependencies:
   flutter_test:
@@ -85,11 +85,11 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
-  retrofit_generator: '5.0.0'
-  build_runner: '2.3.3'
+  flutter_lints: ^3.0.1
+  retrofit_generator: ^8.0.6
+  build_runner: ^2.4.8
   json_serializable: ^6.6.1
-  isar_generator: 3.1.0
+  isar_generator: ^3.1.0+1
   mock_web_server: ^5.0.0-nullsafety.1
   flutter_oss_licenses: ^2.0.1
   test: ^1.22.0
