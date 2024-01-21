@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:fast_app_base/common/cli_common.dart';
 import 'package:fast_app_base/common/widget/animated_number_text.dart';
@@ -27,6 +28,8 @@ class MainScreenState extends State<MainScreen> {
   final intervalDuration = 1.seconds;
   DateTime lastUpdatedTime = DateTime.now();
 
+  double maxPrice = 0;
+
   @override
   void initState() {
     stream = channel.stream;
@@ -37,6 +40,7 @@ class MainScreenState extends State<MainScreen> {
       if (DateTime.now().difference(lastUpdatedTime) > intervalDuration) {
         lastUpdatedTime = DateTime.now();
         setState(() {
+          maxPrice = max(price, maxPrice);
           priceList.add(price);
           // 소수점 2자리 끊기
           priceString = price.toDoubleStringAsFixed();
@@ -61,6 +65,7 @@ class MainScreenState extends State<MainScreen> {
                     const TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                 duration: 50.ms,
               ),
+              LineChartWidget(priceList, maxPrice: maxPrice)
             ],
           ),
         ),
